@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1><%=data.title%></h1>
+        <h3><%=data.authors%></h3>
+        <img src="<%=data.img%>" alt="">
+        <p><%=data.description%></p>
+        <form action="/update/<%=data.id%>?_method=put" method="POST">
+        <input type="text" name="title" value="<%=data.title%>"> 
+        <input type="text"  name="authors" value="<%=data.authors%>">
+        <input type="text"  name="img" value="<%=data.img%>">
+        <input type="text"  name="description" value="<%=data.description%>">
+        <input type="submit" value="Update">
+        </form>
+        <form action="/delete/<%=data.id%>?_method=delete" method="POST">
+            <input type="submit" value="Delete">
+            </form>
+</body>
+</html>
